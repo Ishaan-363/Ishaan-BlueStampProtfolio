@@ -49,7 +49,7 @@ For your second milestone, explain what you've worked on since your previous mil
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5-d-ot6u49A?si=g1570QR0dAFFFP-G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-- accomplishments:
+- Accomplishments:
     - I finished the overall build of my car and glove
     - I finsihed the circuitry for the car and glove
     
