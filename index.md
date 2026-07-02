@@ -17,15 +17,26 @@ You should comment out all portions of your portfolio that you have not complete
   
 # Final Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5-d-ot6u49A?si=g1570QR0dAFFFP-G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
+- accomplishments:
+    - I finished the overall build of my car and glove
+    - I finsihed the circuitry for the car and glove
+    
+- Biggest challenges and triumphs:
+    - Learning how to wire the circuits properley
+    - Understanding what each part of the project does
+    - Putting parts in the wrong location
+    
+- Key topics I learned about:
+    - I learned how circuits work and how to wire them
+    - I learn how arduinos work and what they do
+    - I learned how to think like an engineer and overcome the challenges I faced
+      
+- What's next:
+    - I will learn how to code for the gesture controls
+    - I will learn how the bluetooth modules talk to eachother
+    - I will learn how to debug code that doesn't work properly
 
 
 
