@@ -20,23 +20,16 @@ You should comment out all portions of your portfolio that you have not complete
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5-d-ot6u49A?si=g1570QR0dAFFFP-G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - accomplishments:
-    - I finished the overall build of my car and glove
-    - I finsihed the circuitry for the car and glove
+ 
     
 - Biggest challenges and triumphs:
-    - Learning how to wire the circuits properley
-    - Understanding what each part of the project does
-    - Putting parts in the wrong location
+ 
     
 - Key topics I learned about:
-    - I learned how circuits work and how to wire them
-    - I learn how arduinos work and what they do
-    - I learned how to think like an engineer and overcome the challenges I faced
+
       
 - What's next:
-    - I will learn how to code for the gesture controls
-    - I will learn how the bluetooth modules talk to eachother
-    - I will learn how to debug code that doesn't work properly
+
 
 
 
@@ -54,18 +47,26 @@ For your second milestone, explain what you've worked on since your previous mil
 
 # First Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5-d-ot6u49A?si=g1570QR0dAFFFP-G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-For your first milestone, describe what your project is and how you plan to build it. You can include:
-- An explanation about the different components of your project and how they will all integrate together
-- Technical progress you've made so far
-- Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project
-
-# Schematics 
-Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
+- accomplishments:
+    - I finished the overall build of my car and glove
+    - I finsihed the circuitry for the car and glove
+    
+- Biggest challenges and triumphs:
+    - Learning how to wire the circuits properley
+    - Understanding what each part of the project does
+    - Putting parts in the wrong location
+    
+- Key topics I learned about:
+    - I learned how circuits work and how to wire them
+    - I learn how arduinos work and what they do
+    - I learned how to think like an engineer and overcome the challenges I faced
+      
+- What's next:
+    - I will learn how to code for the gesture controls
+    - I will learn how the bluetooth modules talk to eachother
+    - I will learn how to debug code that doesn't work properly
 
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
