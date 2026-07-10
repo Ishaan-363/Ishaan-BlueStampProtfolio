@@ -104,10 +104,12 @@ Don't forget to place the link of where to buy each component inside the quotati
 | 9V Batteries | Gives the main power to the compenents in the car and the glove | $12.69 | <a href="https://www.amazon.com/Amazon-Basics-Performance-All-Purpose-Batteries/dp/B00MH4QM1S/ref=sr_1_5_pp?crid=3TQ7ANPH958JM&dib=eyJ2IjoiMSJ9.bmcV2Upj_vpB6G9CFlPPxYAryat512da7ekZjc52HecXSTmtx7PbJ50EgQFPCMqlAxjOUq-tL4vQTpozlHvH89bMwx-HJoyGcdz6EY8HrMxahTiqOXkoP7ewkDcgHoMhmHamdlQfW6FBHO0Gm-DYZZnnMuvEU3qOpemA8PGEvRhEx4-lGaBZhrvls039G1-9SizAW-YRGXZ2fFrdVDlREyyOhAuxXZaE5QqUxWesRQgP9UfGOYaInRWTTPwhDbXFa-RPzGbU1C_u4wq-NMqKBtWEQqR9-cA8O3FYOx3icEY.dtKJmI2T-iCmMM_bYnbiHUWzhKpJDRxS-bBmZIwYFKM&dib_tag=se&keywords=9v+batteries&qid=1720651326&rdc=1&s=electronics&sprefix=9v+batteries%2Celectronics%2C105&sr=1-5/"> Link </a> |
 | DMM | Used to mesure and varify circuit parameters | $9.98 | <a href="https://www.amazon.com/dp/B0CXM242J1?ref=fed_asin_title&th=1/"> Link </a> |
 
-# Other Resources/Examples
+# Resources/Citations
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
-- [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
-- [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
-- [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
+- [Source 1](https://www.amazon.com/ref=nav_logo)
+- [Source 2](https://chatgpt.com/)
+- [Source 3](https://gemini.google.com/app)
+- [Source 4](https://www.hackster.io/embeddedlab786/hand-gesture-control-robot-via-bluetooth-94b13d)
+- [Source 5](https://www.youtube.com/watch?v=BXXAcFOTnBo)
+- [Source 6](https://www.youtube.com/watch?v=KGwtit2bFyo&t=13s)
 
-To watch the BSE tutorial on how to create a portfolio, click here.
