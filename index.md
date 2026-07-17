@@ -309,7 +309,6 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Ultrasonic Sensor | Used for mesurements, obstacle detection, and liquid level monitoring | $6.99 | <a href="https://www.amazon.com/WWZMDiB-HC-SR04-Ultrasonic-Distance-Measuring/dp/B0B1MJJLJP/ref=sr_1_1_sspa?crid=3MO9GT3J1FU7J&dib=eyJ2IjoiMSJ9.w-v74CMMP9eRh1BFF5BJ6xZlNH9LlX5HLX1Axp43FWYbpT_9h64LVT_hJcnFuLLU36s_1nGWoajK4N7MDmpkDbJya3W8HYQJjYuN0slE0oCFqnfqycHTLM9hS6ALXGj8tnxnT3ju2cWFCx2h9D8tg5laj_ylnlZFiUwjFPrj1v4ZG6YOVFhzaLdcM5p85xEjTRKVhfqNWEnIji-DkX9b7nU2Vtw6cH-dTi7RIQ5jyYw.3GvxOSggudERYbFqcc2sYhNSP2sx7LpCCukUyINGa70&dib_tag=se&keywords=ultrasonic%2Bsensor&qid=1784299116&sprefix=ultrasonic%2Bsenso%2Caps%2C142&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"> Link </a> |
 
 # Resources/Citations
-One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
 - [Source 1](https://www.amazon.com/ref=nav_logo)
 - [Source 2](https://chatgpt.com/)
 - [Source 3](https://gemini.google.com/app)
