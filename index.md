@@ -11,7 +11,7 @@ My project is a gesture-controlled robot that moves based on hand motions detect
   
 # Final Milestone
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5-d-ot6u49A?si=g1570QR0dAFFFP-G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PHo7yt9W1Tw?si=OvUMEo_L__PZ97P_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - accomplishments:
     - I got my unltrasonic sensor to work
@@ -33,16 +33,26 @@ My project is a gesture-controlled robot that moves based on hand motions detect
 
 # Second Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Dto1lnWAD3U?si=MEK0Lbv7vpBu3uVM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone 
-
+- Accomplishments:
+    - I car is fully able to move now
+    - I made the bluetooth modules properly pair with eachother
+    - I debugged my code to finally work properly
+    
+- Biggest challenges and triumphs:
+    - Getting the bluetooth modules to work with eachother
+    - Having defected motors and buying new ones
+    - Fixing all my wiring so that the code could work properly
+    
+- Key topics I learned about:
+    - I leared how hard it is to pair bluetooth modules
+    - I learned that very small changes in your code can make a very big difference to your project
+    - Trial and error
+      
+- What's next:
+    - I will add an ultrasonic sensor so that the car can detect a wall in from of it and stop a couple of inches brfore crashing
+  
 # First Milestone
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5-d-ot6u49A?si=g1570QR0dAFFFP-G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
