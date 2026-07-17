@@ -1,12 +1,6 @@
 # Ishaan's Gesture Controled Robot
 My project is a gesture-controlled robot that moves based on hand motions detected by sensors. Building it taught me how to combine hardware and programming to create a system that responds in real time, while overcoming challenges such as gesture accuracy and reliable communication between components. This project helped me develop valuable problem-solving and engineering skills while demonstrating how gesture-based control can be used in robotics.
 
-You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
-```HTML 
-<!--- This is an HTML comment in Markdown -->
-<!--- Anything between these symbols will not render on the published site -->
-```
-
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Ishaan T | Ridge High School | Electrical Engineering | Incoming Sophmore
@@ -69,20 +63,215 @@ For your second milestone, explain what you've worked on since your previous mil
     - I will learn how to debug code that doesn't work properly
 
 # Code
-Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
+This is the code for my car:
 ```c++
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  Serial.println("Hello World!");
+#include <SoftwareSerial.h>
+
+// Create a virtual serial port called BT_Serial
+// Pin 2 is RX (connect Bluetooth TX here)
+// Pin 3 is TX (connect Bluetooth RX here)
+SoftwareSerial BT_Serial(2, 3); 
+
+// --- Pins for the Ultrasonic Sensor ---
+const int TRIG_PIN = 12;
+const int ECHO_PIN = 13; 
+
+// --- Motor driver pin definitions (Double check your physical wiring matches these!) ---
+#define enA 11  // Speed control Right (Change to 10 if using your other layout)
+#define in1 10  // Direction Right     (Change to 9 if using your other layout)
+#define in2 9   // Direction Right     (Change to 8 if using your other layout)
+#define in3 8   // Direction Left      (Change to 7 if using your other layout)
+#define in4 7   // Direction Left      (Change to 6 if using your other layout)
+#define enB 6   // Speed control Left  (Change to 5 if using your other layout)
+
+char bt_data;   
+int Speed = 150; 
+long duration;
+int distance;
+
+void setup() { 
+  Serial.begin(115200);     // USB serial monitor for debugging on your Mac
+  BT_Serial.begin(9600);    // FIXED: Changed to 9600 to match your Glove Transmitter!
+
+  // Set up ultrasonic pins
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+
+  // Set up motor driver pins
+  pinMode(enA, OUTPUT); 
+  pinMode(in1, OUTPUT); 
+  pinMode(in2, OUTPUT); 
+  pinMode(in3, OUTPUT); 
+  pinMode(in4, OUTPUT); 
+  pinMode(enB, OUTPUT); 
+
+  delay(200);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // 1. Measure distance using the Ultrasonic Sensor
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+  
+  duration = pulseIn(ECHO_PIN, HIGH);
+  distance = duration * 0.034 / 2; // Convert to cm
 
+  // 2. Read from the Bluetooth serial port
+  if (BT_Serial.available() > 0) { 
+    bt_data = BT_Serial.read();
+    Serial.print("Received: ");
+    Serial.println(bt_data); // Prints to your Mac's Serial Monitor so you can see the gestures arriving
+  }
+
+  // 3. Safety Check: If an object is closer than 10cm, OVERRIDE and Stop!
+  if (distance > 0 && distance <= 10) { 
+    Stop(); 
+    if (bt_data == 'f') {
+      bt_data = 's'; // Block forward movement if a wall is detected
+    }
+  }
+
+  // 4. Run movement blocks based on received gesture commands
+  if (bt_data == 'f') {         // go forward
+    forword(); 
+    Speed = 180;
+  } 
+  else if (bt_data == 'b') {    // Reverse
+    backword(); 
+    Speed = 180;
+  } 
+  else if (bt_data == 'l') {    // turn left
+    turnLeft(); 
+    Speed = 250;
+  } 
+  else if (bt_data == 'r') {    // turn right
+    turnRight(); 
+    Speed = 250;
+  } 
+  else if (bt_data == 's') {    // Stop
+    Stop(); 
+  }
+
+  // Apply speed values to motors
+  analogWrite(enA, Speed); 
+  analogWrite(enB, Speed); 
+
+  delay(50);
+}
+
+// --- Motor Control Functions ---
+void forword() {
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, HIGH);
+}
+
+void backword() {
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, HIGH);
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+}
+
+void turnRight() {
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, HIGH);
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, HIGH);
+}
+
+void turnLeft() {
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+}
+
+void Stop() {
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, LOW);
 }
 ```
+
+This is the code for my gesture controller:
+```c++
+#include <Wire.h> // I2C communication library
+
+// Renamed to MPU_ADDR to avoid conflict with the ARM chip's internal Memory Protection Unit definition
+const int MPU_ADDR = 0x68; 
+int16_t AcX, AcY, AcZ;
+
+int flag = 0;
+
+void setup() {
+  Serial.begin(9600);   // USB Serial Monitor (for debugging on your computer)
+  Serial1.begin(38400);    // Hardware Serial for Bluetooth (Pins RX/0 and TX/1)
+
+  // Initialize interface to the MPU6050
+  Wire.begin();
+  Wire.beginTransmission(MPU_ADDR);
+  Wire.write(0x6B);
+  Wire.write(0);
+  Wire.endTransmission(true);
+
+  delay(500);
+}
+
+void loop() {
+  Read_accelerometer(); // Read MPU6050 accelerometer
+
+  // Send commands over Bluetooth using Serial1
+  if (AcY > 60 && flag == 0) {
+    flag = 1; 
+    Serial1.write('f');
+    Serial.println("f");
+  }
+  if (AcY < 50 && flag == 0) {
+    flag = 1; 
+    Serial1.write('b');
+    Serial.println("b");
+  }
+
+  if (AcX > 50 && flag == 0) {
+    flag = 1; 
+    Serial1.write('l');
+    Serial.println("l");
+  }
+  if (AcX < -50 && flag == 0) {
+    flag = 1; 
+    Serial1.write('r');
+    Serial.println("r");
+  }
+
+  if ((AcX < 50) && (AcX > -50) && (AcY > -50) && (AcY < 60) && (flag == 1)) {
+    flag = 0;
+    Serial1.write('s');
+    Serial.println("s");
+  }
+
+  delay(100);
+}
+
+void Read_accelerometer() {
+
+  if (IMU.accelerationAvailable()) {
+
+    IMU.readAcceleration(x, y, z);
+
+  }
+}
+```
+
+# Schematics
+
+<img src="Gesture-Control-Robot.png">
 
 # Bill of Materials
 Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
